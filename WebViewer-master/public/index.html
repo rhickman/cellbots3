@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Cellbots</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+  </head>
+  <body>
+
+    <div class="container" style="width: 100%">
+
+      <nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand">Cellbots.ai</a>
+          </div>
+	  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+            <ul class="nav navbar-nav" id="nav-bar-logged-out" style="display: none;">
+	      <li><a onclick="loginPage()">Login</a></li>
+	    </ul>
+	    <ul class="nav navbar-nav" id="nav-bar-logged-in" style="display: none;">
+	      <li><a onclick="mainPage()">Home</a></li>
+	      <li><a onclick="logout()">Logout</a></li>
+	    </ul>
+          </div>
+	</div>
+      </nav>
+      
+    
+      <div class="bs-docs-section" id="content">	
+	<div class="row" id="login-row">
+	  <div class="col-lg-6 col-lg-offset-3">
+	    <div class="well bs-component">
+	      <div class="form-horizontal">
+		<legend>Login</legend>
+
+		<div class="alert alert-danger" style="display: none;" id="login-row-invalid">
+		  <p>Email or password is incorrect.</p>
+	      	</div>
+		
+		<div class="form-group">
+		  <label class="col-lg-2 control-label">Email</label>
+		  <div class="col-lg-10">
+		    <input class="form-control" id="login-row-email"
+			   value="" placeholder="Email" type="text" autocomplete="off" />
+		  </div>
+		</div>
+		<div class="form-group">
+		  <label class="col-lg-2 control-label">Password</label>
+		  <div class="col-lg-10">
+                    <input class="form-control" id="login-row-password"
+			   value="" placeholder="Password" type="password" autocomplete="off" />
+		  </div>
+		  </div>
+		<div class="form-group">
+		  <div class="col-lg-10 col-lg-offset-2">
+		    <button type="button" class="btn btn-primary" onClick="loginSubmit()">Login</button>
+		  </div>
+		</div>
+		<div class="form-group">
+		  <div class="col-lg-10 col-lg-offset-2">
+		    <button type="button" class="btn btn-primary" onClick="loginGoogle()">Login With Google</button>
+		  </div>
+		</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	
+	<div class="row" id="main-row">
+	  <div class="col-lg-6 col-lg-offset-3">
+	    <div class="well bs-component">
+	      <legend>Maps</legend>
+	      <ul id="main-row-maps"></ul>
+	    </div>
+	  </div>
+	  <div class="col-lg-6 col-lg-offset-3">
+	    <div class="well bs-component">
+	      <legend>VPS Areas</legend>
+	      <ul id="main-row-vps"></ul>
+	    </div>
+	  </div>
+
+	  <div class="col-lg-6 col-lg-offset-3">
+	    <div class="well bs-component">
+	      <legend>Global Sounds</legend>
+	      <ul id="main-row-global-sounds"></ul>
+
+	      <input type="file" onchange="globalSoundFilesUploaded()" id="main-row-global-sound-files" />
+	    </div>
+	  </div>
+	  
+	  <div class="col-lg-6 col-lg-offset-3">
+	    <div class="well bs-component">
+	      <legend>Local Sounds (for <span class="current-email"></span>)</legend>
+	      <ul id="main-row-sounds"></ul>
+	      
+	      <input type="file" onchange="soundFilesUploaded()" id="main-row-sound-files" />
+	    </div>
+	  </div>
+
+	  <div class="col-lg-6 col-lg-offset-3">
+	    <div class="well bs-component">
+	      <legend>Global Animations</legend>
+	      <ul id="main-row-global-animations"></ul>
+
+	      <input type="file" onchange="globalAnimationFilesUploaded()" id="main-row-global-animation-files" />
+	    </div>
+	  </div>
+	  
+	  <div class="col-lg-6 col-lg-offset-3">
+	    <div class="well bs-component">
+	      <legend>Local Animations (for <span class="current-email"></span>)</legend>
+	      <ul id="main-row-animations"></ul>
+
+	      <input type="file" onchange="animationFilesUploaded()" id="main-row-animation-files" />
+	    </div>
+	  </div>
+
+	  <div class="col-lg-6 col-lg-offset-3" id="main-row-editor" style="display: none;">
+	    <div class="well bs-component">
+	      <legend id="main-row-editor-header"></legend>
+	      <textarea id="main-row-editor-text" class="form-control" rows="20"></textarea>
+	      <button id="main-row-editor-save" class="btn btn-primary" onClick="editorSave()">
+		Save File
+	      </button>
+	      <button id="main-row-editor-close" class="btn btn-primary" onClick="editorClose()">
+		Close Editor
+	      </button>
+	    </div>
+	  </div>
+	</div>
+
+	
+	<div class="row" id="map-row">
+	  <div class="col-lg-12">
+
+	    <div>
+	      <p id="map-map-name"></p>
+	    </div>
+
+	    <div>
+	      <select id="map-robot-select" class="form-control" style="width: initial; display: inline-block;"
+		      onChange="robotSelectorChange()">
+	      </select>
+	      <button id="map-robot-goals" class="btn btn-primary" onClick="robotGoals()">
+		Manage Goals...
+	      </button>
+	      <button id="map-robot-goals" class="btn btn-primary" onClick="robotModalAddGoal(false)">
+		Add Goal...
+	      </button>
+	    </div>
+	    <div>
+	      <select id="map-object-select" class="form-control" style="width: initial; display: inline-block;"
+		      onChange="objectSelectorChange()">
+	      </select>
+	      <button id="map-edit-object" class="btn btn-primary" onClick="editObject()">
+		Edit Object...
+	      </button>
+	      <button id="map-delete-object" class="btn btn-primary" onClick="deleteObject()">
+		Delete Object...
+	      </button>
+	      <button id="map-add-object" class="btn btn-primary" onClick="addObject()">
+		Add Object...
+	      </button>
+	    </div>
+
+	    <div>
+	      <button id="map-custom-points" class="btn btn-primary" onClick="customPoints()">
+		Start Custom Points...
+	      </button>
+	      <button id="map-custom-points-delete" class="btn btn-primary" onClick="customPointsDelete()">
+		Custom Points Delete...
+	      </button>
+	      <button id="map-zoom-in" class="btn btn-primary" onClick="zoomIn()">
+		Zoom in
+	      </button>
+	      <button id="map-zoom-out" class="btn btn-primary" onClick="zoomOut()">
+		Zoom out
+	      </button>
+	      <button class="btn btn-primary" onClick="mapSettingsDisplay()">
+		Settings...
+	      </button>
+	    </div>
+
+	    <div id="map-settings-region">
+	      <button id="map-toggle-svg" class="btn btn-primary" onClick="mapToggleSvg()">Hide Background</button>
+	      <input type="file" onchange="addOverlay()" id="map-add-overlay" style="display: inline;" />
+            </div>
+
+	    <div id="map-video-region" style="width: 100%;">
+	      
+	    </div>
+	    
+	    <div id="map-scroll-region" style="width: 100%; overflow: scroll;">
+	      <div id="map-content" style="position: relative; zoom: 100;"></div>
+	    </div>
+	    
+	  </div>
+	</div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+    <div id="robot-goals" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+	
+	<!-- Modal content-->
+	<div class="modal-content">
+	  <div class="modal-header">
+	    <button type="button" class="close" data-dismiss="modal">&times;</button>
+	    <h4 class="modal-title" id="robot-goals-header"></h4>
+	  </div>
+	  <div class="modal-body">
+	    <div class="bs-docs-section" id="robot-goals-body"> 
+	      <p>Some text in the modal.</p>
+	    </div>
+	  </div>
+	  <div class="modal-footer">
+	    <button type="button" class="btn btn-primary" onClick="robotModalAddGoal(true)">Add Goal...</button>
+	    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	  </div>
+	</div>	
+      </div>
+    </div>
+
+    <div id="robot-add-goal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+	<!-- Modal content-->
+	<div class="modal-content">
+	  <div class="modal-header">
+	    <button type="button" class="close" data-dismiss="modal">&times;</button>
+	    <h4 class="modal-title" id="robot-add-goal-header"></h4>
+	  </div>
+	  <div class="modal-body" id="robot-add-goal-body">
+	    <p>Some text in the modal.</p>
+	  </div>
+	  <div class="modal-footer">
+	    <button type="button" class="btn btn-primary" onClick="robotModalAddGoalSubmit()">Add Goal</button>
+	    <button type="button" class="btn btn-default" onClick="robotModalAddGoalCancel()">Close</button>
+	  </div>
+	</div>
+      </div>
+    </div>
+	
+    
+    <div id="object-add" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+	
+	<!-- Modal content-->
+	<div class="modal-content">
+	  <div class="modal-header">
+	    <button type="button" class="close" data-dismiss="modal">&times;</button>
+	    <h4 class="modal-title" id="object-add">Add New Object</h4>
+	  </div>
+	  <div class="modal-body" id="object-add">
+	    <select id="add-object-type-select" class="form-control" style="width: initial; display: inline-block;">
+	    </select>
+	  </div>
+	  <div class="modal-footer">
+	    <button type="button" class="btn btn-primary" onClick="addObjectModal()">Add Object</button>
+	    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	  </div>
+	</div>
+	
+      </div>
+    </div>
+
+    
+    <div id="object-edit" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+	
+	<!-- Modal content-->
+	<div class="modal-content">
+	  <div class="modal-header">
+	    <button type="button" class="close" data-dismiss="modal">&times;</button>
+	    <h4 class="modal-title" id="object-edit-title">Edit Object</h4>
+	  </div>
+	  <div class="modal-body" id="object-edit-body">
+	    
+	  </div>
+	  <div class="modal-footer">
+	    <button type="button" class="btn btn-primary" onClick="editObjectModal()">Save</button>
+	    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	  </div>
+	</div>
+	
+      </div>
+    </div>
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase-database.js"></script>
+    <script src="js/firebase_util.js"></script>
+    <script src="js/page.js"></script>
+  </body>
+</html>

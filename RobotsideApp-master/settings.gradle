@@ -1,0 +1,1 @@
+include ':app', ':companion', ':common', ':arcompanion', ':tangocommon', ':CellbotsLib', ':detectionapp', ':robot'

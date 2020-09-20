@@ -1,0 +1,151 @@
+<resources>
+    <string name="app_name">Common</string>
+
+    <!-- Assertions -->
+    <string name="assertion_utility_class_never_instantiated">This class is a utility class and should
+        never be instantiated.</string>
+
+    <!-- Login Activity labels -->s
+    <string name="emailpassword_status_fmt">Email User: %1$s (verified: %2$b)</string>
+    <string name="emailpassword_title_text">Email and Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="create_account">Create Account</string>
+    <string name="verify_email">Verify Email</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="auth_failed">Authentication failed</string>
+    <string name="firebase_status_fmt">Cellbots User: %s</string>
+    <string name="robot_state_reject_goal_bad_plan">[Goal rejected] Bad plan</string>
+    <string name="robot_state_reject_goal_null">[Goal rejected] Null goal</string>
+    <string name="robot_state_reject_goal_too_far">[Goal rejected] Goal is too far</string>
+    <string name="robot_state_reject_goal_timeout">[Goal rejected] Timeout reached</string>
+    <string name="robot_state_reject_unknown">[Goal rejected] Unknown</string>
+    <string name="robot_state_goal_completed">Goal completed</string>
+    <string name="robot_state_new_goal_added">New goal added</string>
+    <string name="robot_state_impossible_speed">The robot speed is too fast</string>
+    <string name="robot_state_active">active</string>
+    <string name="robot_state_paused">paused</string>
+    <string name="tango_event_camera_over_exposed">Camera over exposed - </string>
+    <string name="tango_event_camera_under_exposed">Camera under exposed - </string>
+    <string name="tango_event_few_features">Two few features - </string>
+    <string name="tango_event_few_depth_points">Too few depth points - </string>
+    <string name="tango_event_fisheye_camera_over_exposed">Fisheye camera over exposed - </string>
+    <string name="tango_event_device_covered">Device covered - </string>
+    <string name="tango_event_motion_track_invalid">Motion tracking lost - </string>
+    <string name="tango_event_moving_too_fast">Device moving too fast - </string>
+    <string name="tango_event_unknown">Unknown - </string>
+    <string name="tango_event_detected">detected</string>
+    <string name="tango_event_resolved">resolved</string>
+    <string name="bumper_activated">Bumper activated</string>
+    <string name="octomap_obstacle">Octomap is detecting an obstacle</string>
+
+
+    <!-- Sign-in status messages -->
+    <string name="signed_in_fmt">Signed in as: %s</string>
+    <string name="signed_in">Signed in</string>
+    <string name="signing_in">Signing in…</string>
+    <string name="signed_out">Signed out</string>
+    <string name="signed_in_err">"Error: please check logs."</string>
+    <string name="error_null_person">
+        Error: Plus.PeopleApi.getCurrentPerson returned null. Ensure that the Google+ API is
+        enabled for your project, you have a properly configured google-services.json file
+        and that your device has an internet connection.
+    </string>
+    <string name="loading">Loading…</string>
+    <string name="auth_code_fmt">Auth Code: %s</string>
+    <string name="id_token_fmt">ID Token: %s</string>
+
+    <!-- About App Version -->
+    <string name="display_application_version">Application version: %1$s</string>
+
+    <!-- Google Play Services error for Toast -->
+    <string name="play_services_error_fmt">Google Play Services Error: %i</string>
+
+    <!-- Button labels -->
+    <string name="sign_out">Sign Out</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="refresh_token">Get Fresh Token</string>
+
+    <!-- Content Description for images -->
+    <string name="desc_google_icon">Google Logo</string>
+
+    <!-- Rationale for asking for Contacts -->
+    <string name="contacts_permission_rationale">Contacts access is needed in order to retrieve your email address.</string>
+
+    <!-- Activity Names and Descriptions -->
+    <string name="name_sign_in_activity">SignInActivity</string>
+    <string name="desc_sign_in_activity">Signing in, signing out, and revoking access.</string>
+    <string name="desc_sign_in_activity_scopes">Signing in, signing out, and revoking access with Google Drive permissions.</string>
+
+    <string name="name_id_token_activity">IdTokenActivity</string>
+    <string name="desc_id_token_activity">Retrieving an ID Token for the user.</string>
+
+    <string name="desc_auth_code_activity">Demonstrate retrieving an auth code for authorizing your server.</string>
+    <string name="name_auth_code_activity">ServerAuthCodeActivity</string>
+
+    <string name="desc_rest_activity">Demonstrate using Google Sign In with a Google REST API</string>
+    <string name="name_rest_activity">RestApiActivity</string>
+
+    <!-- Messages for the Rest API activity -->
+    <string name="connections_fmt">Connections: %1$s</string>
+    <string name="msg_contacts_failed">Get contacts failed.</string>
+
+    <!-- TODO(user): replace with your real server client ID -->
+    <!-- Server Client ID.  This should be a valid Web OAuth 2.0 Client ID obtained
+         from https://console.developers.google.com/ -->
+    <string name="server_client_id">YOUR_SERVER_CLIENT_ID</string>
+
+    <string name="pref_text_user_sounds">Enable sounds from user-generated goals</string>
+    <string name="pref_user_sounds">pref_user_sounds</string>
+    <string name="pref_text_autogen_sounds">Enable sounds from autogenerated goals</string>
+    <string name="pref_autogen_sounds">pref_autogen_sounds</string>
+    <string name="pref_text_command_sounds">Enable sounds from commands</string>
+    <string name="pref_command_sounds">pref_command_sounds</string>
+    <string name="pref_goal_timeout">pref_goal_timeout</string>
+    <string name="text_pref_goal_timeout">Time to give up on a goal when blocked [seconds]</string>
+    <string name="pref_text_smoother_deviation">Smoother deviation [0...1]</string>
+    <string name="pref_text_smoother_smoothness">Smoother smoothness [0...1]</string>
+    <string name="pref_smoother_deviation">pref_smoother_deviation</string>
+    <string name="pref_smoother_smoothness">pref_smoother_smoothness</string>
+    <string name="pref_adjust_poses">pref_bundle_adjustment</string>
+    <string name="pref_text_adjust_poses">Adjust poses on map save</string>
+    <string name="pref_experimental_use_octomap">pref_experimental_use_octomap</string>
+    <string name="pref_text_experimental_use_octomap">Use Octomap (Experimental)</string>
+    <string name="pref_text_import_worlds">Import worlds from cloud</string>
+    <string name="pref_import_worlds">pref_import_worlds</string>
+    <string name="pref_text_max_goal_distance_from_adf">Maximum goal distance from ADF points
+    </string>
+    <string name="pref_max_goal_distance_from_adf">pref_max_goal_distance_from_adf</string>
+    <string name="pref_enable_ros">pref_enable_ros</string>
+    <string name="pref_text_enable_ros">Enable ROS Node</string>
+
+    <!-- Save buttons -->
+    <string name="pref_save_robot_buttons">robot_preferences_buttons</string>
+    <string name="pref_save_as_fleet_preferences">save_fleet_preferences</string>
+    <string name="pref_text_save_as_fleet_preferences">Save as fleet</string>
+
+    <!-- SeekBar -->
+    <string name="seekbar_max_vel_dialog_message">Maximum percentage linear velocity [0;0.65] m/s</string>
+    <string name="seekbar_max_vel_key_preference">pref_seekbar_velocity</string>
+    <string name="seekbar_max_vel_title">Maximum linear velocity</string>
+    <string name="seekbar_occ_grid_dialog_message">Percentage of inflation distance [0;50] cm</string>
+    <string name="seekbar_occ_grid_key_preference">pref_seekbar_occ_grid</string>
+    <string name="seekbar_occ_grid_title">Inflation distance for Occupancy Grid</string>
+    <string name="seekbar_summary">Current value is </string>
+    <string name="seekbar_units">%</string>
+
+    <!-- Voice Messages -->
+    <string name="voice_error_input_unknown">Voice action was unknown. Could not find the appropriate intent.</string>
+
+   <!-- Log Debug Messages -->
+    <string name="log_debug_timestampmanager_not_synchronized">TimestampManager must be synchronized
+        to get timestamp. Synchronizing.</string>
+
+    <!-- Action Buttons -->
+    <string name="action_start_poi_controller">Start POI Controller</string>
+
+    <!-- Others -->
+    <string name="points_of_interest">Points of Interest</string>
+    <string name="point_of_interest">Point of Interest</string>
+
+</resources>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              style="?attr/actionButtonStyle"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              android:background="@color/colorPrimary"
+    >
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/current_robot"
+        android:textColor="@color/title"
+        />
+
+    <TextView
+        android:id="@+id/text_current_robot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/none_selected"
+        android:textColor="@color/title"
+        />
+
+    <TextView
+        android:id="@+id/textview_robot_connection_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/title"
+        />
+
+    <TextView
+        android:id="@+id/textview_robot_localized"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/title"
+        />
+
+</LinearLayout>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             xmlns:tools="http://schemas.android.com/tools"
+             tools:context="ai.cellbots.arcompanion.ui.MainActivity"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+    >
+
+    <org.rajawali3d.view.SurfaceView
+        android:id="@+id/ar_surfaceview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <TextView
+            android:id="@+id/app_info_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@android:color/white"
+            android:background="@color/semiTransparentBlack"
+            />
+
+        <LinearLayout
+            android:id="@+id/logging_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/app_info_textview"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/timestamp_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/SemiBlackBackgroundWhiteText"
+                />
+
+            <TextView
+                android:id="@+id/tango_info_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/SemiBlackBackgroundWhiteText"
+                />
+
+            <TextView
+                android:id="@+id/reference_frames_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/SemiBlackBackgroundWhiteText"
+                />
+
+            <TextView
+                android:id="@+id/pose_info_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/SemiBlackBackgroundWhiteText"
+                />
+
+            <TextView
+                android:id="@+id/map_info_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/SemiBlackBackgroundWhiteText"
+                />
+
+            <TextView
+                android:id="@+id/click_coordinates_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xs"
+                android:text="@string/click_coordinates_textview_text"
+                style="@style/SemiBlackBackgroundWhiteText"
+                />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/robots_list_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="50dp"
+        >
+
+        <TextView
+            android:id="@+id/label_pick_a_robot_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/pick_a_robot"
+            android:textSize="24sp"
+            />
+
+        <ListView
+            android:id="@+id/robots_listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/voice_command_input_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="@dimen/spacing_m"
+        android:src="@drawable/ic_mic"
+        app:fabSize="normal"
+        />
+
+    <TextView
+        android:id="@+id/state_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:textSize="40sp"
+        tools:text="Loading....."
+        />
+
+</FrameLayout>

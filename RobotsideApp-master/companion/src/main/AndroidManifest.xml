@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="ai.cellbots.companion"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    // Permissions for accessing to internet and microphone
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_companion_launcher_2017nov"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_companion_launcher_2017nov"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity"
+            android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="ai.cellbots.common.LoginActivity" />
+        <activity android:name="ai.cellbots.common.AboutActivity"
+                  android:screenOrientation="landscape"/>
+    </application>
+
+</manifest>

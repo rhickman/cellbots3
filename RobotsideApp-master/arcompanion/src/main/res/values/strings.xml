@@ -1,0 +1,82 @@
+<resources>
+    <string name="timestamp_format">Timestamp: %f</string>
+    <string name="tango_timestamp_format">Tango Timestamp: %f</string>
+    <string name="pick_a_robot">Please pick a robot</string>
+
+    <!-- Permissions -->
+    <string name="tango_permissions_error">You must accept tango permissions</string>
+    <string name="permissions_camera_denied_message">Camera permissions denied. Closing app</string>
+    <string name="permission_record_audio_success">Permission to record audio granted.</string>
+    <string name="permission_record_audio_failed">Permission to record audio was denied.</string>
+    <string name="permission_all_permissions_failed">All permissions must be granted to use the ARCompanion app.</string>
+
+    <!-- Log Debug Messages -->
+    <string name="debug_loader_obj_null_or_invalid_cannot_render_robot_model">The LoaderOBJ object is null or its
+        parsed object is invalid. The loaded robot model cannot be rendered.</string>
+
+    <!-- Log Errors -->
+    <string name="error_transform_data_status_code_invalid">Transform data status code was not valid.
+        Check your Point object and the TangoSupport.getMatrixTransformAtTime parameters</string>
+    <string name="error_parse_obj_file_failed">Parsing the loaded .obj file failed. Check if the .obj
+        file is valid by loading it into Blender or MeshLab, and if the material used is non-null.</string>
+    <string name="error_poi_name_cannot_be_empty">The Point of Interest name cannot be empty.</string>
+
+    <!-- Assertions -->
+    <string name="assertion_utility_class_never_instantiated">This class is a utility class and should
+        never be instantiated.</string>
+
+    <!-- Exceptions -->
+    <string name="exception_tango_error">"Tango threw an exception! Check your Tango configuration
+        and make sure it and its listeners are connected and implemented properly."</string>
+    <string name="exception_tango_config_error">Error in setting up TangoConfig! Check your
+        configuration keys and values!</string>
+    <string name="exception_tango_invalid">"Tango invalid exception! Try again!"</string>
+    <string name="exception_tango_out_of_date">"Tango service outdated!"</string>
+    <string name="exception_tango_api_error_opengl_thread">Tango API call error within OpenGL thread</string>
+    <string name="exception_opengl_thread">Exception on OpenGL thread</string>
+    <string name="exception_world_null_or_invalid">World is null or invalid!</string>
+    <string name="exception_tango_pose_data_depth_camera_invalid">Failed to retrieve TangoPoseData.
+    Could not get depth camera pose at time %d</string>
+    <string name="exception_tango_pose_data_color_camera_invalid">Failed to retrieve TangoPoseData.
+        Could not get color camera transform at time %d</string>
+    <string name="exception_tango_pose_data_invalid">Failed to retrieve TangoPoseData.</string>
+    <string name="exception_depth_of_touch_position_null">Depth of touch position is null at time %d</string>
+    <string name="exception_thread_opengl">Exception on the OpenGL thread</string>
+
+    <!-- Toast Messages -->
+    <string name="toast_device_not_localized">This device is not localized. Please localize first
+        before proceeding.</string>
+    <string name="toast_touch_position_invalid">Touch position is null. Try clicking in another spot
+        or move the phone closer.</string>
+    <string name="toast_robot_detailed_world_invalid">The robot\'s world was invalid and cannot be used.
+        Please set a valid world using the app RobotApp or pick another robot.</string>
+    <string name="toast_error_loading_robot_map">An error has occurred when loading this robot\'s map.
+        Check if the map is valid or try another one.</string>
+    <string name="toast_resynchronizing_timestamp_manager">Re-synchronizing TimestampManager...</string>
+
+    <!-- Menu -->
+    <string name="menu_voice_command">Voice Command</string>
+    <string name="menu_show_logging_info">Show Logging Info</string>
+    <string name="menu_hide_logging_info">Hide Logging Info</string>
+    <string name="menu_sign_out">Sign Out</string>
+    <string name="menu_about">About</string>
+    <string name="menu_change_robot">Change Robot</string>
+    <string name="menu_clear_active_goals">Clear Active Goals</string>
+    <string name="menu_robot_position">Robot\'s Position</string>
+    <string name="menu_original_path">Original Path</string>
+    <string name="menu_smoothed_path">Smoothed Path</string>
+    <string name="menu_custom_path">Custom Path</string>
+    <string name="menu_points_of_interest">Points of Interest</string>
+
+    <!-- UI -->
+    <string name="click_coordinates_textview_text">Click Position:</string>
+    <string name="goal_coordinates_textview_text">Goal Coordinates:</string>
+    <string name="add_a_new_poi">Add a new Point of Interest (POI)</string>
+    <string name="button">Button</string>
+    <string name="voice">Voice</string>
+    <string name="confirm">Confirm</string>
+    <string name="name_of_poi">Name of POI</string>
+    <string name="debug_parsed_object_null">Parsed object for the loaded .obj file came up null.
+        Check if the loaded .obj file is valid and a valid material is present in the file.</string>
+
+</resources>

@@ -1,0 +1,5 @@
+GotoRobotIntent	{gotoslot} {placeslot}
+AnimationIntent	{animationexecutionsslot}
+StartRobotIntent	{startslot}
+StopRobotIntent	{stopslot}
+VacuumIntent	{vacuumslot} {placeslot}

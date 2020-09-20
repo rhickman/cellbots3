@@ -1,0 +1,323 @@
+{
+  "project_info": {
+    "project_number": "79733467808",
+    "firebase_url": "https://cellbots-robot-app.firebaseio.com",
+    "project_id": "cellbots-robot-app",
+    "storage_bucket": "cellbots-robot-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:79733467808:android:290afaf13c32d179",
+        "android_client_info": {
+          "package_name": "ai.cellbots.robotapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "79733467808-aijmbd5dnte5u93rmc0lhai8oso4e3rq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ai.cellbots.robotapp",
+            "certificate_hash": "76903c5e243956aa8cfb3813570f36cbc5c878c2"
+          }
+        },
+        {
+          "client_id": "79733467808-dob5b67av28r1p4sum0qqrmt6amuftho.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "79733467808-5su4036gp93pnr18o6uvd4aeitfvqj7q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ai.cellbots.robotapp",
+            "certificate_hash": "7fca73abfbb27c627f4d7b2f66966d47e8ce7845"
+          }
+        },
+        {
+          "client_id": "79733467808-6u11d1h7mt0ijllaor3ouqnd31kijreo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJdn1y5C6a-d5_A5cOWYnOoIUC_LKL0ec"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "79733467808-dob5b67av28r1p4sum0qqrmt6amuftho.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:79733467808:android:9c7ce7c2b71b92dc",
+        "android_client_info": {
+          "package_name": "ai.cellbots.companion"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "79733467808-idjm6t5pfu9a47piams95mvnidn2f41v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ai.cellbots.companion",
+            "certificate_hash": "76903c5e243956aa8cfb3813570f36cbc5c878c2"
+          }
+        },
+        {
+          "client_id": "79733467808-dob5b67av28r1p4sum0qqrmt6amuftho.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "79733467808-38e5nek5vmm97na21k1n509m7s6pfv8o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ai.cellbots.companion",
+            "certificate_hash": "7fca73abfbb27c627f4d7b2f66966d47e8ce7845"
+          }
+        },
+        {
+          "client_id": "79733467808-6u11d1h7mt0ijllaor3ouqnd31kijreo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJdn1y5C6a-d5_A5cOWYnOoIUC_LKL0ec"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "79733467808-dob5b67av28r1p4sum0qqrmt6amuftho.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:79733467808:android:24ca8afb9397898b",
+        "android_client_info": {
+          "package_name": "ai.cellbots.arcompanion"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "79733467808-8g97213ng6b9irvibjbn7d7id32p7q1k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ai.cellbots.arcompanion",
+            "certificate_hash": "7fca73abfbb27c627f4d7b2f66966d47e8ce7845"
+          }
+        },
+        {
+          "client_id": "79733467808-vq3gpoq1fvnkspikfa66ugjtsp6qobrt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ai.cellbots.arcompanion",
+            "certificate_hash": "76903c5e243956aa8cfb3813570f36cbc5c878c2"
+          }
+        },
+        {
+          "client_id": "79733467808-dob5b67av28r1p4sum0qqrmt6amuftho.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "79733467808-6u11d1h7mt0ijllaor3ouqnd31kijreo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJdn1y5C6a-d5_A5cOWYnOoIUC_LKL0ec"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "79733467808-dob5b67av28r1p4sum0qqrmt6amuftho.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:79733467808:android:6378a83ed2844567",
+        "android_client_info": {
+          "package_name": "ai.cellbots.robotapp.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "79733467808-46t1c1n2tdmd4500k6su9bkr1e8r8n25.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ai.cellbots.robotapp.debug",
+            "certificate_hash": "7fca73abfbb27c627f4d7b2f66966d47e8ce7845"
+          }
+        },
+        {
+          "client_id": "79733467808-dob5b67av28r1p4sum0qqrmt6amuftho.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "79733467808-6u11d1h7mt0ijllaor3ouqnd31kijreo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJdn1y5C6a-d5_A5cOWYnOoIUC_LKL0ec"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "79733467808-dob5b67av28r1p4sum0qqrmt6amuftho.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:79733467808:android:377b2d394613c921",
+        "android_client_info": {
+          "package_name": "ai.cellbots.arcompanion.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "79733467808-tt2kd3ad2ffbperjumurorj1u9nk45o2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ai.cellbots.arcompanion.debug",
+            "certificate_hash": "7fca73abfbb27c627f4d7b2f66966d47e8ce7845"
+          }
+        },
+        {
+          "client_id": "79733467808-dob5b67av28r1p4sum0qqrmt6amuftho.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "79733467808-6u11d1h7mt0ijllaor3ouqnd31kijreo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJdn1y5C6a-d5_A5cOWYnOoIUC_LKL0ec"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "79733467808-dob5b67av28r1p4sum0qqrmt6amuftho.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:79733467808:android:e8d41efd1a6e2059",
+        "android_client_info": {
+          "package_name": "ai.cellbots.companion.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "79733467808-utppp3tua5s1l2rqb8t26290qe7homfp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ai.cellbots.companion.debug",
+            "certificate_hash": "7fca73abfbb27c627f4d7b2f66966d47e8ce7845"
+          }
+        },
+        {
+          "client_id": "79733467808-dob5b67av28r1p4sum0qqrmt6amuftho.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "79733467808-6u11d1h7mt0ijllaor3ouqnd31kijreo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJdn1y5C6a-d5_A5cOWYnOoIUC_LKL0ec"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "79733467808-dob5b67av28r1p4sum0qqrmt6amuftho.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

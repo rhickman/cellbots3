@@ -1,0 +1,62 @@
+<resources>
+    <string name="status_text_initial_value">Loading…</string>
+    <string name="status_text_robot_disabled">Robot Disabled</string>
+
+    <!-- Buttons -->
+    <string name="start_mapping">Start Mapping</string>
+    <string name="save_map">Save Map</string>
+    <string name="stop_operation">Stop Operation</string>
+    <string name="stop_service">Stop Service</string>
+    <string name="start_service">Start Service</string>
+    <string name="start_vps">Start VPS</string>
+    <string name="button_open_poi_controller">Open POI Controller</string>
+    <string name="nudge_robot">Nudge Robot</string>
+
+    <string name="service_notification_content_title">Cellbots.ai Robot</string>
+    <string name="service_notification_ticker">Cellbots.ai Robot</string>
+    <string name="service_notification_content_text">Cellbots.ai Robot</string>
+
+    <string name="pref_enable_ros">pref_enable_ros</string>
+    <string name="pref_text_enable_ros">Enable ROS Node</string>
+
+    <string name="display_application_version">Application version: %1$s</string>
+
+    <string name="exception_tango_error">"Tango exception! Try again!"</string>
+    <string name="exception_tango_invalid">"Tango invalid exception! Try again!"</string>
+    <string name="exception_out_of_date">"Tango service outdated!"</string>
+    <string name="robot_driver_invalid">Robot Driver is Invalid!</string>
+    <string name="robot_driver_error">Robot Driver Error!</string>
+    <string name="ros_startup_error">ROS Startup Error!</string>
+
+    <string name="action_about">About</string>
+    <string name="cloud_sync">Syncing…</string>
+    <string name="saving_world">Saving World…</string>
+    <string name="tango_permissions_error">You must accept tango permissions</string>
+
+    <string name="pref_start_app_on_boot">pref_start_app_on_boot</string>
+    <string name="pref_text_start_app_on_boot">Start App on Boot</string>
+
+    <string name="pref_start_map_navigation">pref_start_map_navigation</string>
+    <string name="pref_text_start_map_navigation">Start map navigation when the app starts</string>
+
+    <string name="pref_enable_new_classes">pref_enable_new_classes</string>
+    <string name="pref_text_enable_new_classes">Enable new class structure</string>
+
+    <string name="pref_enable_operation_sound">pref_enable_operation_sound</string>
+    <string name="pref_text_enable_operation_sound">Enable operation sound</string>
+
+    <string name="pref_enable_vision_system">pref_enable_vision_system</string>
+    <string name="pref_text_enable_vision_system">Enable vision system</string>
+
+    <string name="pref_enable_mock_robot">pref_enable_mock_robot</string>
+    <string name="pref_text_enable_mock_robot">Enable mock robot</string>
+
+    <string name="pref_enable_mock_location">pref_enable_mock_location</string>
+    <string name="pref_text_enable_mock_location">Enable mock localization</string>
+
+    <string name="controller_null">[ROBOT] Controller is disabled</string>
+    <string name="unable_to_localize">[ROBOT] Location is null but is localized</string>
+    <string name="new_robot_connected">[ROBOT] New robot connected</string>
+    <string name="robot_disconnected">[ROBOT] Robot disconnected</string>
+
+</resources>

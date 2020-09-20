@@ -1,0 +1,98 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+        // Enabling multidex support
+        // http://knowledge-cess.com/android-gradle-multidexenabled-property/
+        // com.android.ide.common.process.ProcessException: java.util.concurrent.ExecutionException:
+        // com.android.dex.DexIndexOverflowException: method ID not in [0, 0xffff]: 65536
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk {
+            // Specifies the ABI configurations of your native
+            // libraries Gradle should build and package with your APK.
+            abiFilters 'arm64-v8a'
+            ldLibs "log"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs 'libs'
+            //jni.srcDirs = []
+        }
+    }
+    
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+    externalNativeBuild {
+        // Provides a relative path to your CMake build script.
+        cmake {
+            path "src/main/jni/CMakeLists.txt"
+        }
+    }
+    packagingOptions {
+        exclude 'lib/arm64-v8a/liboctomap.so'
+        exclude 'lib/arm64-v8a/liboctomath.so'
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LGPL2.1'
+    }
+}
+
+dependencies {
+    compile project(':common')
+    compile project(':tangocommon')
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:27.0.2'
+    compile 'com.github.cellbotsai:ForkedUsbSerial:tt1.0'
+    compile group: 'commons-lang', name: 'commons-lang', version: '2.4'
+    compile 'org.rajawali3d:rajawali:1.1.970@aar'
+
+    compile('org.ros.rosjava_core:rosjava:0.3.3') {
+        exclude group: 'junit'
+        exclude group: 'xml-apis'
+    }
+    compile('org.ros.rosjava_core:rosjava_geometry:0.3.3') {
+        exclude group: 'junit'
+        exclude group: 'xml-apis'
+    }
+    compile 'org.ros.rosjava_messages:geometry_msgs:1.12.5'
+    compile 'org.ros.rosjava_messages:tf2_msgs:0.5.9'
+    compile 'org.ros.rosjava_messages:nav_msgs:1.12.5'
+    compile 'org.ros.rosjava_messages:sensor_msgs:1.12.5'
+    compile 'org.ros.rosjava_messages:octomap_msgs:0.3.2'
+    compile 'org.ros.rosjava_messages:visualization_msgs:1.12.5'
+
+    // Required -- JUnit 4 framework
+    testCompile 'junit:junit:4.12'
+    compile 'io.netty:netty:3.5.2.Final'
+    compile 'org.ros.rosjava_bootstrap:message_generation:0.3.0'
+
+    compile 'org.greenrobot:eventbus:3.1.1'
+}

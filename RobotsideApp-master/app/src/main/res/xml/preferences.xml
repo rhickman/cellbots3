@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:key="internal_robot_settings"
+        android:title="Internal robot settings">
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="@string/pref_start_app_on_boot"
+            android:title="@string/pref_text_start_app_on_boot"/>
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="@string/pref_start_map_navigation"
+            android:title="@string/pref_text_start_map_navigation"/>
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="@string/pref_enable_ros"
+            android:title="@string/pref_text_enable_ros"/>
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="@string/pref_enable_new_classes"
+            android:title="@string/pref_text_enable_new_classes"/>
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="@string/pref_enable_operation_sound"
+            android:title="@string/pref_text_enable_operation_sound"/>
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="@string/pref_enable_vision_system"
+            android:title="@string/pref_text_enable_vision_system"/>
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="@string/pref_enable_mock_robot"
+            android:title="@string/pref_text_enable_mock_robot"/>
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="@string/pref_enable_mock_location"
+            android:title="@string/pref_text_enable_mock_location"/>
+
+    </PreferenceCategory>
+</PreferenceScreen>

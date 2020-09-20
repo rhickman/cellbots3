@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ai.cellbots.companion.MainActivity"
+    >
+
+    <!-- This frame encapsulates all the main content of the main page. This is
+         what the activity content should actually be -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:id="@+id/buttons_container"
+            android:layout_width="match_parent"
+            android:layout_height="37dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/group_buttons"
+                android:layout_width="0dp"
+                android:layout_height="33dp"
+                android:layout_weight="8"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_show_debug"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="onHideShowDebugButtonClicked"
+                    android:text="Log"
+                    android:textSize="12sp"/>
+
+                <Button
+                    android:id="@+id/btn_executive_mode"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/running_button_stop"
+                    android:elevation="0dp"
+                    android:onClick="onExecutiveModeButtonClicked"
+                    android:text="@string/executive_mode_random_driver"
+                    android:textSize="12sp"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintTop_toBottomOf="@+id/loading_progress_bar"/>
+
+                <Button
+                    android:id="@+id/btn_show_POIS"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="onHideShowPOIsButtonClicked"
+                    android:text="@string/POIs"
+                    android:textSize="12sp"/>
+
+                <Button
+                    android:id="@+id/btn_show_teleop"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="onHideShowTeleopButtonClicked"
+                    android:text="@string/teleop"
+                    android:textSize="12sp"/>
+
+                <Button
+                    android:id="@+id/btn_show_sounds"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="onHideShowSoundsButtonClicked"
+                    android:text="@string/sounds"
+                    android:textSize="12sp"/>
+
+                <Button
+                    android:id="@+id/btn_show_anims"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="onHideShowAnimationsButtonClicked"
+                    android:text="@string/anim"
+                    android:textSize="12sp"/>
+
+                <Button
+                    android:id="@+id/btn_show_video"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="onHideShowVideoButtonClicked"
+                    android:text="@string/video"
+                    android:textSize="12sp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:maxLines="1" android:text="Battery"/>
+
+                <ProgressBar
+                    android:id="@+id/batteryProgressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:max="100"
+                    android:progress="0"
+                    android:progressTint="#388E3C"
+                    android:visibility="visible" tools:visibility="visible"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ui_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ScrollView
+                android:id="@+id/text_log_scroll"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="left"
+                android:layout_weight="1" android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/text_log"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="monospace"
+                    android:inputType="textMultiLine"
+                    android:scrollbars="vertical"
+                    android:textSize="10sp"
+                    android:visibility="visible"/>
+            </ScrollView>
+
+            <ListView
+                android:id="@+id/SoundListView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_weight="1"
+                android:choiceMode="none" android:listSelector="@android:color/darker_gray"/>
+
+            <ListView
+                android:id="@+id/AnimsListView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_weight="1"
+                android:choiceMode="none" android:listSelector="@android:color/darker_gray"/>
+
+            <LinearLayout
+                android:id="@+id/floorplan_frame"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:baselineAligned="false"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <!-- Show during queries to Firebase ("working ...") -->
+
+                <!-- Temporary buttons for testing -->
+
+                <ProgressBar
+                    android:id="@+id/loading_progress_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"/>
+
+                <android.support.design.widget.CoordinatorLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/main_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ai.cellbots.companion.FloorplanView
+                        android:id="@+id/floorplan"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/btn_save_map"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|left"
+                        android:layout_margin="16dp"
+                        android:onClick="onSaveMapButtonClicked"
+                        android:src="@android:drawable/ic_menu_save"
+                        android:tint="@color/abc_background_cache_hint_selector_material_dark"
+                        app:backgroundTint="@color/running_button_start"
+                        app:fabSize="normal"
+                        app:layout_anchorGravity="bottom|left|end"/>
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/btn_running"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|left"
+                        android:layout_margin="16dp"
+                        android:onClick="onRunningButtonClicked"
+                        android:src="@android:drawable/ic_media_pause"
+                        android:tint="@color/abc_background_cache_hint_selector_material_dark"
+                        app:backgroundTint="@color/running_button_stop"
+                        app:fabSize="normal"
+                        app:layout_anchorGravity="bottom|left|end"/>
+                </android.support.design.widget.CoordinatorLayout>
+
+
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/POIListView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_weight="0.5"
+                android:choiceMode="singleChoice" android:listSelector="@android:color/darker_gray"/>
+
+            <ai.cellbots.common.webrtc.WebRTCView
+                android:id="@+id/WebRTCView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_weight="2" />
+
+            <LinearLayout
+                android:id="@+id/teleop_view"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp" android:layout_weight="1"
+                android:baselineAligned="false"
+                android:gravity="right" android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingBottom="10dp"
+                    android:weightSum="2">
+
+                    <Button
+                        android:id="@+id/btn_action1_switch"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:onClick="onAction1ButtonClicked"
+                        android:text="@string/action_1_off"
+                        android:textSize="12sp"/>
+                    <Button
+                        android:id="@+id/btn_action2_switch"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:onClick="onAction2ButtonClicked"
+                        android:text="@string/action_2_off"
+                        android:textSize="12sp"/>
+                </LinearLayout>
+
+                <ai.cellbots.common.teleop.VirtualJoystickView
+                    android:id="@+id/joystick_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Container for holding full-screen fragments. -->
+    <!-- Visible only if the FragmentManager has a non-zero transaction count. -->
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="@android:color/white"
+        />
+
+</FrameLayout>

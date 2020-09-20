@@ -1,0 +1,57 @@
+{
+  "intents": [
+    {
+      "intent": "GotoRobotIntent",
+      "slots": [
+        {
+          "name": "gotoslot",
+          "type": "GOTO"
+        },
+        {
+          "name": "placeslot",
+          "type": "PLACE"
+        }
+      ]
+    },
+    {
+      "intent": "AnimationIntent",
+      "slots": [
+        {
+          "name": "animationexecutionsslot",
+          "type": "ANIMATIONEXECUTIONS"
+        }
+      ]
+    },
+    {
+      "intent": "StartRobotIntent",
+      "slots": [
+        {
+          "name": "startslot",
+          "type": "START"
+        }
+      ]
+    },
+    {
+      "intent": "StopRobotIntent",
+      "slots": [
+        {
+          "name": "stopslot",
+          "type": "STOP"
+        }
+      ]
+    },
+    {
+      "intent": "VacuumIntent",
+      "slots": [
+        {
+          "name": "vacuumslot",
+          "type": "VACUUM"
+        },
+        {
+          "name": "placeslot",
+          "type": "PLACE"
+        }
+      ]
+    }
+  ]
+}

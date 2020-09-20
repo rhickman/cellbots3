@@ -1,0 +1,63 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
+
+    defaultConfig {
+        minSdkVersion 21
+        //noinspection OldTargetApi,OldTargetApi
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        // Enabling multidex support
+        multiDexEnabled true
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    // WARNING: Setting the returnDefaultValues property to true should be done with care.
+    // The null/zero return values can introduce regressions in your tests, which are hard to debug
+    // and might allow failing tests to pass. Only use it as a last resort.
+    // TODO (playerthree) Find a better way of mocking the Log class as this property may cause problems
+    // in testing.
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'org.apache.commons:commons-math3:3.6.1'
+    compile 'com.android.support:appcompat-v7:27.0.2'
+    compile 'commons-io:commons-io:2.5'
+    compile 'com.google.firebase:firebase-core:11.0.4'
+    compile 'com.google.firebase:firebase-auth:11.0.4'
+    compile 'com.google.firebase:firebase-storage:11.0.4'
+    compile 'com.google.firebase:firebase-database:11.0.4'
+    // dependencies for Firebase authentication and google sign-in
+    compile 'com.google.android.gms:play-services-auth:11.0.4'
+    compile 'org.webrtc:google-webrtc:1.0.19742'
+    // Speech recognition dependencies
+    compile 'ai.api:libai:1.6.12'
+    compile 'ai.api:sdk:2.0.7@aar'
+    // api.ai SDK dependencies
+    compile 'com.google.code.gson:gson:2.8.1'
+    compile 'junit:junit:4.12'
+    testCompile 'junit:junit:4.12'
+    compile 'commons-io:commons-io:2.5'
+
+    // FirebaseUI
+    compile 'com.firebaseui:firebase-ui-auth:2.3.0'
+
+    compile 'org.parceler:parceler-api:1.1.9'
+    annotationProcessor 'org.parceler:parceler:1.1.9'
+}

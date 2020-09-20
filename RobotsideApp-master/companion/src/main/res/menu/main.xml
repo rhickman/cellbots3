@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/action_voice_command"
+          android:icon="@android:drawable/ic_btn_speak_now"
+          android:title="Voice Command"
+          app:showAsAction="always"/>
+
+    <item android:id="@+id/action_preferences"
+          android:title="Settings"
+          android:icon="@android:drawable/ic_menu_preferences"
+          app:showAsAction="always"/>
+
+    <!-- About activity -->
+    <item android:id="@+id/action_about"
+          android:title="@string/text_action_about"
+          app:showAsAction="never"/>
+
+    <!-- Log out action -->
+    <item android:id="@+id/action_logout"
+          android:title="Logout"
+          app:showAsAction="never"/>
+
+    <!-- Option to select a robot -->
+    <item android:id="@+id/action_select_robot"
+          android:title="Select a robot"
+          app:showAsAction="never"/>
+
+    <!-- Option to rename robot -->
+    <item android:id="@+id/action_rename_robot"
+          android:title="@string/action_text_rename_robot"
+          app:showAsAction="never"/>
+
+    <!-- Option to show available maps -->
+    <item android:id="@+id/action_manage_maps"
+          android:title="@string/manage_maps"
+          app:showAsAction="never"/>
+
+    <!-- Option to cancel active goals -->
+    <item android:id="@+id/action_cancel_goals"
+          android:title="@string/action_text_cancel_goals"
+          app:showAsAction="never"/>
+
+    <!-- Option to reset zoom -->
+    <item android:id="@+id/action_reset_zoom"
+          android:title="@string/action_text_reset_zoom"
+          app:showAsAction="never"/>
+
+    <!-- Option to start POI Controller Fragment -->
+    <item android:id="@+id/action_start_poi_controller"
+          android:title="@string/action_start_poi_controller"
+          app:showAsAction="never"/>
+
+</menu>

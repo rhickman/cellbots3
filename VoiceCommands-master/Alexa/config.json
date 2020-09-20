@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "cellbots-robot-app",
+  "private_key_id": "a026890ecc33163c3a2962d6dd35ce89bd7c39d1",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC4shqDlsYhOCNP\nYm3UyDvdQxYfmWgPh2Klea/PBLRM1TIe9fEY82dMNB5RW+ypfo/nEHDjxrN333Av\nV2wJqgS42OBb+8h3UgdWIP3diZ+ZxL83SoFWC4u1QPlLZHi71uIynq/jl74lmgup\n/9z1eKzGKC014dnXh7n9En/7h8r6r3tLdsryHq0qzJq51O3s6VUE3DxAs7CUhMIY\nqT+bHsD1XTtbYKPQNMTbcLu5PcT2Nbpy/RKUOrUYXUEk+MxZoQ4t+FGSbRoLJD1l\nONfYG4zr98Uq/tZ+jfCWboIzQPN+THlfJYknU2e1K1uSSgrPEd2Gzv7bJIddjvT8\nviEPbqF3AgMBAAECggEAEB590TrebdXFbHnjAK1ntBwqbnWSrxBExruuYVCVdRiC\nOFDZ9YXWCmuIsyxk+jdGfdxhzdnwndH4ANm4tHCMhZ6/7fyKdrIdBnejUFYLgihj\n+9evyVUBS2oGl9Lb9UuAEE+TJYzVFoOxkuj2ssxmX8uag9et4xvrBTA7z+BTvGRg\nH+L3ssOulJa3ErJrRtaT9/Sho1IdtfCXmUrgzbKBOUArNqgHDyADvGadZyTue2Co\ne+eFCOl/Vx0vCKHSwCSVtnVDxQnab3ABQX6TSkyKrEyDvVFRG90HlQvZd3TaNyQy\nEukNKs5wdpqTnuQ05VPNzS6+RoCreIvUPf3XCeIpAQKBgQDx/Yr2poQr/oVRrwv9\nh7Lkkln+yE7eyYWnqpkYydalZyDDzZ2LcFgYgnuWMirci8vCvKnTLB/d2B+JxGD1\nujx/iMFzt/EwKf/jNFWw7xP5pM9PWo6kF5+YXq1NFkWHon5kJ97ueM/PZ4onBDTt\nrXNIgeiUfn8dHnBFCbwzcRvY9wKBgQDDY2pwH9QIZ3cG+dv9/YATFp+1f4GkZB1O\nPB8vm+qgf1RFt1x2mQtY016a2Udww5wtXdqJ2Xezuwh+HETqLu5fg3Alf0jPCqSF\nzrnZok4GgbkGv2XeWoq1ZnZsiiHaaSlourWGj9uMBdJHmdTpJMBDmu8QJh5d6d9h\nG94mgM3bgQKBgFgbztsbqggytewV5jG7lOEwgGAKIt1vVqDDttaVtvemYwGn/fLl\nRs41xDXdskl3BQu0kcj3yeqGZIVO4VbXJmvxKS6vDLxSrn7VcVXo1scQwQLNoB4T\nE+LwpfzpXQuTmJ1y/vKpPlDwDBdEqtjXTKBb3Ikkvbeme45HiyTXzCHlAoGAabZm\nJhfyXkGscofI8Niw7KL28fn0qH7KJEP/E4EmJoP9kmKskjYnn31s2BbqwiXzX9BB\npweT7hgpdiHRX2rY6bBxgrglKm+1p/e7MfbQhFC3TOFNOkp+dbrkI8Fwo3z2PIWY\nJR+8Rzv3E2o1eZa6t1kiMviMwX8BrsanIOnbdwECgYBpEC+bj78zOGVF7nPftOmv\nOPSlzuRZwUhC0DwuxBfwZi3A/pMKfb9NqVb5k3s4wuerD9iXwK5QJSYPCQ0UsgdC\noAY3IJseulI9UMecBnXHhfK/oaMzXNOWIoOeX1pk5YDM+JpjSDdqo3I/iXKHrUCu\nsfREDU9JjLF4WCuQyOwkLg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-kdea0@cellbots-robot-app.iam.gserviceaccount.com",
+  "client_id": "112711024198196006049",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-kdea0%40cellbots-robot-app.iam.gserviceaccount.com"
+}

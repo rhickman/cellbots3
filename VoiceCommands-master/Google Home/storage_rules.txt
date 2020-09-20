@@ -1,0 +1,26 @@
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /maps/{userId}/{mapUuid}/dat {
+        allow write, read: if request.auth.uid == userId;
+    }
+    match /maps/{userId}/{mapUuid}/adf {
+        allow write, read: if request.auth.uid == userId;
+    }
+    match /overlays/{userId}/{mapUuid}/{overlayId} {
+        allow write, read: if request.auth.uid == userId;
+    }
+    match /sounds/{userId}/{sound} {
+        allow write, read: if request.auth.uid == userId;
+    }
+    match /animations/{userId}/{animation} {
+        allow write, read: if request.auth.uid == userId;
+    }
+    match /global_animations/{animation} {
+        allow write, read: if request.auth.uid != null;
+    }
+    match /global_sounds/{animation} {
+        allow write, read: if request.auth.uid != null;
+    }
+  }
+}
+

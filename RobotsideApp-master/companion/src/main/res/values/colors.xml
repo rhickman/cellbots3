@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <item name="explored_space" type="color">#d2d2d2</item>
+    <item name="furniture" type="color">#15A6D9</item>
+    <item name="user_marker" type="color">#be6A2875</item>
+    <item name="running_button_start" type="color">#006400</item>
+    <item name="running_button_stop" type="color">#FF0000</item>
+    <item name="save_map_button" type="color">#006400</item>
+    <item name="title" type="color">#FFFFFF</item>
+</resources>
+

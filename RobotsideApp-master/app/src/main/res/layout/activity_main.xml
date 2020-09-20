@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ai.cellbots.robotapp.MainActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/robot_app_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/main_toolbar"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:background="?attr/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteY="0dp"
+            tools:layout_editor_absoluteX="8dp"/>
+
+        <TextView
+            android:id="@+id/status_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/status_text_initial_value"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/main_toolbar"
+            app:layout_constraintHorizontal_bias="0.0" />
+
+        <Button
+            android:id="@+id/logout_main"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:text="@string/sign_out"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintTop_toBottomOf="@+id/status_text" />
+
+        <Button
+            android:id="@+id/start_service"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:text="@string/start_service"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintTop_toBottomOf="@+id/logout_main" />
+
+        <Button
+            android:id="@+id/stop_service"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:text="@string/stop_service"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintTop_toBottomOf="@+id/start_service" />
+
+        <Button
+            android:id="@+id/start_mapping"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:text="@string/start_mapping"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/stop_service"/>
+
+        <Button
+            android:id="@+id/calibrate"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:text="Calibrate"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintTop_toBottomOf="@+id/start_mapping" />
+
+        <Button
+            android:id="@+id/stop_operation"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:text="@string/stop_operation"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintTop_toBottomOf="@+id/calibrate" />
+
+        <Button
+            android:id="@+id/save_map"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:text="@string/save_map"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintTop_toBottomOf="@+id/stop_operation" />
+
+        <Button
+            android:id="@+id/start_vps"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:text="@string/start_vps"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintTop_toBottomOf="@+id/save_map" />
+
+        <Button
+            android:id="@+id/button_open_poi_controller"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:text="@string/button_open_poi_controller"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintTop_toBottomOf="@+id/start_vps"
+            />
+
+        <Button
+            android:id="@+id/nudge_robot"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:text="@string/nudge_robot"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintTop_toBottomOf="@+id/button_open_poi_controller"
+            />
+
+        <ai.cellbots.common.teleop.VirtualJoystickView
+            android:id="@+id/teleop_joystick_view"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nudge_robot"
+            />
+
+        <ListView
+            android:id="@+id/adf_list"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nudge_robot"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/cloud_sync"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="@string/cloud_sync"
+            android:gravity="center"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/save_map"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/saving_world"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="@string/saving_world"
+            android:gravity="center"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/save_map"
+            app:layout_constraintVertical_bias="0.0"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <!-- Container for holding full-screen fragments. -->
+    <!-- Visible only if the FragmentManager has a non-zero transaction count. -->
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="@android:color/white"
+        />
+
+</FrameLayout>

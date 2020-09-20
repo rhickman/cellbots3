@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="fill_parent"
+    android:weightSum="10"
+    android:baselineAligned="false" android:orientation="horizontal">
+
+    <Button
+        android:text="@string/pref_text_save_as_fleet_preferences"
+        android:layout_width="fill_parent"
+        android:layout_weight="5"
+        android:layout_height="wrap_content"
+        android:onClick="onSaveFleetSettingsClick"
+        android:id="@+id/pref_save_robot_config_as_general">
+    </Button>
+</LinearLayout>

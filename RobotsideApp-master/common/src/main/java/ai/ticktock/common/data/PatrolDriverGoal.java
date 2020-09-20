@@ -1,0 +1,36 @@
+package ai.cellbots.common.data;
+
+import java.util.UUID;
+
+/**
+ * PatrolDriverGoal data class. Used to send a robot to a point on the map and patrol around it.
+ */
+public class PatrolDriverGoal extends PlannerGoal {
+    public static final String NAME = "patrolDriver";
+    public static final String VERSION = "1.0.0";
+
+    // Goal type name
+    public String name;
+    // Goal type parameters.
+    public LocationTimeParams parameters = new LocationTimeParams();
+    // Timestamp when the goal was created
+    public long timestamp;
+    // The goal version
+    public String version;
+    // Priority of the goal, default = 100
+    public long priority;
+
+    public PatrolDriverGoal(Transform tf, String map, long time)  {
+        name = NAME;
+        version = VERSION;
+        uuid = UUID.randomUUID().toString();
+        parameters.location = tf;
+        parameters.map = map;
+        parameters.time = time;
+        timestamp = System.currentTimeMillis();
+        priority = 100;
+    }
+
+    public PatrolDriverGoal() {
+    }
+}

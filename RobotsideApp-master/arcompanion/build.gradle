@@ -1,0 +1,70 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
+
+    defaultConfig {
+        applicationId "ai.cellbots.arcompanion"
+        minSdkVersion 21
+        targetSdkVersion 23     // Required for ASUS Zenfone AR to work. Fine for others.
+        versionCode 102
+        versionName "1.102"
+        multiDexEnabled true
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    signingConfigs {
+        release {
+            storeFile file("release.jks")
+            storePassword System.getenv("KEY_PASSWORD")
+            keyAlias "robot_app"
+            keyPassword System.getenv("KEY_PASSWORD")
+        }
+        debug {
+            storeFile file("debug.keystore")
+            keyAlias "androiddebugkey"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            signingConfig signingConfigs.debug
+            applicationIdSuffix ".debug"
+        }
+    }
+    allprojects {
+        repositories {
+            maven { url "https://jitpack.io" }
+        }
+    }
+}
+
+dependencies {
+    compile project(":common")
+    compile project(":tangocommon")
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+        exclude group: 'com.google.code.findbugs'
+    })
+    compile 'com.google.guava:guava:24.0-android'
+    //noinspection GradleCompatible
+    compile 'com.android.support:appcompat-v7:27.0.2'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+    compile 'com.google.tango:sdk-base:1.54'
+    compile 'com.google.tango:support-base:1.54'
+    compile 'com.google.tango:support-reconstruction:1.54'
+    compile 'org.rajawali3d:rajawali:1.1.777@aar'
+    compile 'com.github.zagum:SpeechRecognitionView:1.2'
+    compile 'com.google.code.gson:gson:2.8.2'
+    testCompile 'junit:junit:4.12'
+}

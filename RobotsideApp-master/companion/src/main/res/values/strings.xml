@@ -1,0 +1,33 @@
+<resources>
+    <string name="current_robot">Robot: &#160; </string>
+    <string name="none_selected">None selected</string>
+    <string name="manage_maps">Manage Maps</string>
+    <string name="start_mapping">Map</string>
+    <string name="save_map">Save</string>
+    <string name="stop">Stop</string>
+    <string name="start">Start</string>
+    <string name="point_of_interest">Point of Interest</string>
+    <string name="points_of_interest">Points of Interest</string>
+    <string name="POIs">POIs</string>
+    <string name="teleop">Teleop</string>
+    <string name="sounds">Sounds</string>
+    <string name="action_1_off">A1: Off</string>
+    <string name="action_2_off">A2: Off</string>
+    <string name="action_1_on">A1: On</string>
+    <string name="action_2_on">A2: On</string>
+    <string name="pref_text_show_active_goals">Show active goals</string>
+    <string name="pref_key_show_active_goals">pref_show_active_goals</string>
+    <string name="pref_text_show_original_path">Show original path</string>
+    <string name="pref_key_show_original_path">pref_show_adf_data</string>
+    <string name="executive_mode_random_driver">Random</string>
+    <string name="executive_mode_stop">None</string>
+    <string name="anim">Anim</string>
+    <string name="action_text_cancel_goals">Cancel active goals</string>
+    <string name="action_text_rename_robot">Rename robot</string>
+    <string name="action_text_reset_zoom">Reset Zoom</string>
+    <string name="no_record">No recording permissions</string>
+    <string name="video">Video</string>
+    <string name="text_action_about">About</string>
+    <string name="error_poi_name_cannot_be_empty">The Point of Interest name cannot be empty.
+    </string>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <menu
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <item android:id="@+id/DriveGoal"
+              android:title="Go to goal"></item>
+        <item android:id="@+id/PointOfInterest"
+              android:title="Add point of interest"></item>
+        <item android:id="@+id/patrolDriverGoal"
+              android:title="Patrol around point"></item>
+        <item android:id="@+id/SpotClean"
+              android:title="Clean spot"></item>
+
+</menu>

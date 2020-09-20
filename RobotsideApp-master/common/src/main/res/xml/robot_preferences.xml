@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:key="robot_settings"
+        android:title="Robot settings">
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="@string/pref_experimental_use_octomap"
+            android:title="@string/pref_text_experimental_use_octomap" />
+
+        <!-- Make downloading worlds from cloud optional as it blocks the app after starting service
+        (BUG)-->
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="@string/pref_import_worlds"
+            android:title="@string/pref_text_import_worlds"/>
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="@string/pref_adjust_poses"
+            android:title="@string/pref_text_adjust_poses"/>
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="@string/pref_autogen_sounds"
+            android:title="@string/pref_text_autogen_sounds"/>
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="@string/pref_user_sounds"
+            android:title="@string/pref_text_user_sounds"/>
+
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="@string/pref_command_sounds"
+            android:title="@string/pref_text_command_sounds"/>
+
+        <EditTextPreference
+            android:defaultValue="1.0"
+            android:key="@string/pref_max_goal_distance_from_adf"
+            android:title="@string/pref_text_max_goal_distance_from_adf"/>
+
+        <EditTextPreference
+            android:defaultValue="30"
+            android:key="@string/pref_goal_timeout"
+            android:title="@string/text_pref_goal_timeout"/>
+
+        <EditTextPreference
+            android:defaultValue="0.1"
+            android:enabled="false"
+            android:key="@string/pref_smoother_deviation"
+            android:title="@string/pref_text_smoother_deviation"/>
+
+        <EditTextPreference
+            android:defaultValue="0.3"
+            android:enabled="false"
+            android:key="@string/pref_smoother_smoothness"
+            android:title="@string/pref_text_smoother_smoothness"/>
+
+        <!-- Inflation parameter -->
+        <ai.cellbots.common.settings.SeekBarPreference
+            android:defaultValue="50"
+            android:max="100"
+            android:key="@string/seekbar_occ_grid_key_preference"
+            android:dialogMessage="@string/seekbar_occ_grid_dialog_message"
+            android:summary="@string/seekbar_summary"
+            android:title="@string/seekbar_occ_grid_title"
+            android:text="@string/seekbar_units" />
+
+        <!-- Robot maximum velocity -->
+        <ai.cellbots.common.settings.SeekBarPreference
+            android:defaultValue="50"
+            android:max="100"
+            android:key="@string/seekbar_max_vel_key_preference"
+            android:dialogMessage="@string/seekbar_max_vel_dialog_message"
+            android:summary="@string/seekbar_summary"
+            android:title="@string/seekbar_max_vel_title"
+            android:text="@string/seekbar_units"/>
+
+        <Preference
+            android:layout="@layout/robot_preferences_buttons"
+            android:key="@string/pref_save_robot_buttons"/>
+
+    </PreferenceCategory>
+</PreferenceScreen>

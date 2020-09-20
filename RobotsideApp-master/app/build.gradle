@@ -1,0 +1,110 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.github.triplet.play'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
+    playAccountConfigs {
+        defaultAccountConfig {
+            serviceAccountEmail = 'cellbots-apk-uploads@api-5518697328012504747-764440.iam.gserviceaccount.com'
+            pk12File = file('play-store-key.p12')
+        }
+    }
+    defaultConfig {
+        applicationId "ai.cellbots.robotapp"
+        minSdkVersion 21
+        // Warning: the target SDK must be 23 for the ASUS ZenPhone to work. Any other value fails.
+        targetSdkVersion 23
+        versionCode 102
+        versionName "1.102"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        playAccountConfig = playAccountConfigs.defaultAccountConfig
+        ndk {
+            // Specifies the ABI configurations of your native
+            // libraries Gradle should build and package with your APK.
+            abiFilters 'arm64-v8a'
+                    //'x86', 'x86_64', 'armeabi', 'armeabi-v7a'
+        }
+    }
+    signingConfigs {
+        release {
+            storeFile file("release.jks")
+            storePassword System.getenv("KEY_PASSWORD")
+            keyAlias "robot_app"
+            keyPassword System.getenv("KEY_PASSWORD")
+        }
+        debug {
+            storeFile file("debug.keystore")
+            keyAlias "androiddebugkey"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            signingConfig signingConfigs.debug
+            applicationIdSuffix ".debug"
+        }
+    }
+    sourceSets {
+        main {
+            jni.srcDirs = []  // Disable automatic ndk-build call.
+        }
+    }
+    // Encapsulates your external native build configurations.
+    externalNativeBuild {
+        // Provides a relative path to your CMake build script.
+        cmake {
+            path "src/main/jni/CMakeLists.txt"
+        }
+    }
+}
+
+dependencies {
+    compile project(":common")
+    compile project(":tangocommon")
+    compile project(':CellbotsLib')
+    compile project(":robot")
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+        exclude group: 'com.google.code.findbugs'
+    })
+    // NOTE: Do not place your application dependencies here; they belong
+    // in the individual module build.gradle files
+    // compile 'org.ros.android_core:android_gingerbread_mr1:[0.1,0.2)'
+    // compile 'org.ros.android_core:android_honeycomb_mr2:[0.1,0.2)'
+    compile('org.ros.rosjava_core:rosjava:0.3.3') {
+        exclude group: 'junit'
+        exclude group: 'xml-apis'
+    }
+    compile('org.ros.rosjava_core:rosjava_geometry:0.3.3') {
+        exclude group: 'junit'
+        exclude group: 'xml-apis'
+    }
+    compile 'com.google.tango:sdk-base:1.54'
+    compile 'com.google.tango:support-base:1.54'
+    compile 'com.google.tango:support-reconstruction:1.54'
+    //noinspection GradleCompatible
+    compile 'com.android.support:appcompat-v7:27.0.2'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'junit:junit:4.12'
+    compile 'com.google.code.findbugs:jsr305:3.0.2'
+    compile 'org.ros.rosjava_messages:geometry_msgs:1.12.5'
+    compile 'org.ros.rosjava_messages:tf2_msgs:0.5.9'
+    compile 'org.ros.rosjava_messages:nav_msgs:1.12.5'
+    compile 'org.ros.rosjava_messages:sensor_msgs:1.12.5'
+    compile 'org.ros.rosjava_messages:visualization_msgs:1.12.5'
+    compile 'com.github.cellbotsai:ForkedUsbSerial:tt1.0'
+    testCompile 'junit:junit:4.12'
+    compile 'com.github.anrwatchdog:anrwatchdog:1.3.0'
+    compile 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    compile 'org.greenrobot:eventbus:3.1.1'
+}
+
+apply plugin: 'com.google.gms.google-services'

@@ -1,0 +1,51 @@
+language: android
+jdk: oraclejdk8
+
+env:
+  secure: jfZPj5EdRfAHXw9+mQT5X9Lj8/FBW2o6DN5wICVPGxvioHeXMk5Su+f7GP54QwKJbQ6hziOhA6Az0TAfgHJ8flT0l3kaGaKU4KNJPj9WlCZ81bZuOrz22pkXaEwAS3lUJv0YXZ1d6aSEAhWOXexddaBzgKkilT99yzS4zQvcGanLPhiQBdos25B0IA4rf0AuUMrblKhvDMU5ts2Kqy/n/RPI2mnQQemAeeVGuv/YYiZppxfh7kp1gd9nlFapFEwgiiB3+a9RcYhFOuF99ZSLqCBs5y4S7tK07Dr02uSB5g4XiUxnxO7+bZBjQcOd4TbjZ0WKcIwrFMJ8PaXv0WFpoP4o8riHifv+3YIR+mRnZbxgRTKudU0qDeBWA/ezKy6GNNyT5feBY1rXythEbK7yQGOWaV8ikg1SjbbmDrkcv51z89gKM+pz+XbVU8cIvB7qAhOcMwRirmjmVQsSOBur7B+fv4Yp5Z6L+/p0KSwttyRHAay7eC1xuddAlzJ4LApud7Rrj2fRXID1EKSn/i0IhEB0ibNC4GDLtFh5oKgbt0+ozYWmZ6Hgk4RHQMgJlwfsp/gRTHDOO1WreUgYBBO0hTOZlHrJduQZXaJnR8eGymFya17DvvriFLiut8VnS3tiFrVbHZZhXce62StgmOhFkgABxAU+fy923ufh1lO8wk8=
+
+android:
+  components:
+  - platform-tools
+  - tools
+  - build-tools-26.0.1
+  - android-26
+  - extra-google-m2repository
+  - extra-android-m2repository
+  licenses:
+  - 'android-sdk-preview-license-.+'
+  - 'android-sdk-license-.+'
+  - 'google-gdk-license-.+'
+
+before_install:
+- mkdir "$ANDROID_HOME/licenses" || true
+- echo -e "\n8933bad161af4178b1185d1a37fbf41ea5269c55" > "$ANDROID_HOME/licenses/android-sdk-license"
+- echo -e "\nd56f5187479451eabf01fb78af6dfcb131a6481e" > "$ANDROID_HOME/licenses/android-sdk-license"
+- echo -e "\n84831b9409646a918e30573bab4c9c91346d8abd" > "$ANDROID_HOME/licenses/android-sdk-preview-license"
+
+before_script:
+  - export TERM=dumb
+  - curl --fail --retry 3 -o ndk.zip https://dl.google.com/android/repository/android-ndk-r15b-linux-x86_64.zip
+  - unzip -q ndk.zip
+  - export ANDROID_NDK_HOME=`pwd`/android-ndk-r15b
+  - export LOCAL_ANDROID_NDK_HOME="$ANDROID_NDK_HOME"
+  - export LOCAL_ANDROID_NDK_HOST_PLATFORM="linux-x86_64"
+  - export PATH=$PATH:${ANDROID_NDK_HOME}
+  - env
+
+script:
+- if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./gradlew assembleRelease; fi
+- if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then ./gradlew assembleDebug; fi
+- if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then ./gradlew test; fi
+
+deploy:
+  skip_cleanup: true
+  provider: releases
+  api_key:
+    secure: mIwsZcqeUJqrzMMvlCExYnponSTXNbR8xqu6Ma9UObonUB69MSprXl0wrQLq4M0xW3814rl4DEoqhnxNvIequay16txwT0EN4LyjbOn7c+DrUbqi0Qc91u9mZroZ+qTqmLXG7WRPGuOX68fXvk7XU5fjj8o1noX9AjoUvvcTK2CCTnmKI/OKzHZo12XX1UUiESQ2edwJnqaSU4OihAdZT929SAAYl7vcPDz0hklgFXCnyMoKkLvBs+ULP58J2pbGm9IGo+7NTP9SMW973oGtFOP3DvpjFDHNgGEoaK6PBOpsrmhsRpJSb+wAztA2fSlA81qD2Q8bzR6qOC8rsR8if93uCaImqR1u/nugei0Y+h1+9fUabZgCvzXFIcGIkhFqU6QC2u/KIBu9muZ+eZwu6d05VhEPM0C0014Tu/MlxkGNyFLwQpoNbBmSh5vYD5bZhMuHA9saswxQMWrEK4JH6fluQe3AIZCnT9QDek9dmHe8i+xonmfyi3EXUsSqVo3Kqxcrq1xI/bhvooLU8o6Fzaf6elCkWycFqXA0E1G5YYx5q3GFvcvOBvACfK93iX5S5FgS6hI800LR8H64He2V8z4r47azs6RiWN7zOw7/c2uBds9RZdunew51t0+i30NagTA8IzFrXyC9EQ25QG+IpshSOzzowNO7pNjmdotro88=
+  file:
+  - "companion/build/outputs/apk/companion-release.apk"
+  - "app/build/outputs/apk/app-release.apk"
+  - "arcompanion/build/outputs/apk/arcompanion-release.apk"
+  on:
+    tags: true

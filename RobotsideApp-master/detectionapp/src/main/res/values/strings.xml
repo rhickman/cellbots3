@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Cellbots Detector</string>
+    <string name="app_name_long">Cellbots Object Detector</string>
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+      Defines Kobuki Robot as USB device. Obtained the void and pid by connecting the robot base
+      to a linux box and running lsusb.
+    -->
+    <usb-device vendor-id="1027" product-id="24577" />
+    <!--
+      Defines Neato Robot as USB device. Obtained the void and pid by connecting the robot base
+      to a linux box and running lsusb, same as in NeatoDriver.java
+    -->
+    <usb-device vendor-id="8456" product-id="30732" />
+    <!--
+      Defines Parallax Robot as USB device. Obtained the void and pid by connecting the robot base
+      to a linux box and running lsusb, same as in ParallaxArloDriver.java
+    -->
+    <usb-device vendor-id="1027" product-id="24597" />
+</resources>

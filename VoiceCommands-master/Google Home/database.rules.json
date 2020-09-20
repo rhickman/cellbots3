@@ -1,0 +1,65 @@
+{
+    "rules": {
+        "maps": {
+            "$user_id": {
+                ".write": "$user_id === auth.uid",
+                ".read": "$user_id === auth.uid"
+            }
+        },
+        "robots": {
+            "$user_id": {
+                ".write": "$user_id === auth.uid",
+                ".read": "$user_id === auth.uid",
+                ".indexOn": "map"
+            }
+        },
+        "robot_goals": {
+            "$user_id": {
+                ".write": "$user_id === auth.uid",
+                ".read": "$user_id === auth.uid"
+            }
+        },
+        "sounds": {
+            "$user_id": {
+                ".write": "$user_id === auth.uid",
+                ".read": "$user_id === auth.uid"
+            }
+        },
+        "global_sounds": {
+            ".read": "auth != null",
+            ".write": "auth != null"
+        },
+        "global_animations": {
+            ".read": "auth != null",
+            ".write": "auth != null"
+        },
+        "user_preferences": {
+            "$user_id": {
+                ".write": "$user_id === auth.uid",
+                ".read": "$user_id === auth.uid"
+            }
+        },
+        "animations": {
+            "$user_id": {
+                ".write": "$user_id === auth.uid",
+                ".read": "$user_id === auth.uid"
+            }
+        },
+        "overlays": {
+            "$user_id": {
+                ".read": "$user_id === auth.uid",
+                "$map_id": {
+                    ".write": "$user_id === auth.uid && root.child('maps').child($user_id).child($map_id).exists()"
+                }
+            }
+        },
+        "objects": {
+            "$user_id": {
+                ".read": "$user_id === auth.uid",
+                "$map_id": {
+                    ".write": "$user_id === auth.uid && root.child('maps').child($user_id).child($map_id).exists()"
+                }
+            }
+        }
+    }
+}
